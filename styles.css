@@ -1,0 +1,65 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: sans-serif;
+	margin: 0;
+	flex-direction: column;
+	gap: 10px;
+	background-color: black;
+	color: ghostwhite;
+}
+
+h1 {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+}
+
+.toggle {
+	opacity: 0;
+}
+
+.toggle + label {
+	position: relative;
+	padding-left: 5rem;
+	padding-top: .5rem;
+}
+
+/* Pill of the toggle */
+.toggle + label::before {
+	content: "";
+	background-color: ghostwhite;
+	width: 4.5rem;
+	height: 2.5rem;
+	border-radius: 1.25rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: background-color .25s ease-in-out;
+}
+
+/* Circle toggle */
+.toggle + label::after {
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: black;
+	position: absolute;
+	top: .25rem;
+	left: .25rem;
+	transition: transform .25s ease-in-out;
+}
+
+.toggle:checked + label::before {
+	background-color: #29b57f;
+}
+
+#not-agree:checked + label::before {
+	background-color: #a52121;
+}
+
+.toggle:checked + label::after {
+	transform: translateX(100%);
+}
