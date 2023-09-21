@@ -57,7 +57,7 @@ h1 {
 }
 
 #not-agree:checked + label::before {
-	background-color: #a52121;
+	background-color: purple;
 }
 
 .toggle:checked + label::after {
